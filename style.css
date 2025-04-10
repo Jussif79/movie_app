@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+:root {
+  --primary-color: #0f0f1b;
+  --secondary-color: #1e1e3f;
+  --accent-color: #00ffc3;
+  --text-color: #ffffff;
+  --card-radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #1f1c2c 0%, #928dab 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
+  color: #fff;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.search::placeholder {
+  color: #ccc;
+}
+
+.search:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  outline: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.movie {
+  background-color: var(--secondary-color);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  transform: translateY(-10px);
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 500;
+  background-color: rgba(15, 15, 27, 0.9);
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.movie-info span {
+  background-color: #151528;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: #32ff7e;
+}
+
+.movie-info span.orange {
+  color: #ffdd59;
+}
+
+.movie-info span.red {
+  color: #ff5e57;
+}
+
+.overview {
+  background-color: #1e1e3f;
+  color: #dcdde1;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
